@@ -21,7 +21,7 @@ namespace RSLogixConverter
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             lastChar = richTextBox1.Text[richTextBox1.Text.Length - 1];
-            
+            MessageBox.Show(lastChar.ToString());
 
         }
     }

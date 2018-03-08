@@ -1,0 +1,7 @@
+c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\bin\Debug\RSLogixConverter.exe
+c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\bin\Debug\RSLogixConverter.pdb
+c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.Form1.resources
+c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.Properties.Resources.resources
+c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.csproj.GenerateResource.Cache
+c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.exe
+c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.pdb
