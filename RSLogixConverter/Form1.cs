@@ -13,6 +13,7 @@ namespace RSLogixConverter
     {
         char Chr;
         int numChr;
+        Font FNT;
 
         public Form1()
         {
@@ -62,16 +63,27 @@ namespace RSLogixConverter
         private void button1_Click(object sender, EventArgs e)
         {
             FontDialog fd = new FontDialog();
+            
+
             fd.Font = richTextBox1.SelectionFont;
+
             if (fd.ShowDialog() == DialogResult.OK)
             {
-                richTextBox1.SelectionFont = fd.Font;
+                //richTextBox1.SelectionFont = fd.Font;
+                FNT = fd.Font;
+                richTextBox1.SelectionFont = FNT;
             }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            richTextBox2.SelectionFont = FNT;
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            richTextBox2.SelectionFont = FNT;
         }
     }
 }
