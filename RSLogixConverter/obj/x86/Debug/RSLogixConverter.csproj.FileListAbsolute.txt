@@ -5,3 +5,4 @@ c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixCo
 c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.csproj.GenerateResource.Cache
 c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.exe
 c:\users\lenovo\documents\visual studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Debug\RSLogixConverter.csprojResolveAssemblyReference.cache

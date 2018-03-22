@@ -11,7 +11,8 @@ namespace RSLogixConverter
 {
     public partial class Form1 : Form
     {
-        char lastChar;
+        char Chr;
+        int numChr;
 
         public Form1()
         {
@@ -20,8 +21,19 @@ namespace RSLogixConverter
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            lastChar = richTextBox1.Text[richTextBox1.Text.Length - 1];
-            MessageBox.Show(lastChar.ToString());
+            richTextBox2.Clear();
+            for (int i = 0; i < (richTextBox1.Text.Length); i++)
+            {
+
+                Chr = richTextBox1.Text[i];
+                numChr = Chr;
+
+                richTextBox2.AppendText(numChr.ToString() + " ");
+
+                //MessageBox.Show(numChr.ToString());
+
+
+            }
 
         }
     }
