@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace RSLogixConverter
 {
@@ -53,7 +54,6 @@ namespace RSLogixConverter
 
                 else richTextBox2.AppendText(Chr.ToString());
 
-                //richTextBox2.AppendText(numChr.ToString() + " ");
 
 
             }
@@ -62,18 +62,25 @@ namespace RSLogixConverter
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String temp1, temp2;
             FontDialog fd = new FontDialog();
+
+            temp1 = richTextBox1.Text;
+            temp2 = richTextBox2.Text;
+            richTextBox1.Clear();
             
 
             fd.Font = richTextBox1.SelectionFont;
 
             if (fd.ShowDialog() == DialogResult.OK)
             {
-                //richTextBox1.SelectionFont = fd.Font;
                 FNT = fd.Font;
                 richTextBox1.SelectionFont = FNT;
             }
 
+            richTextBox1.AppendText(temp1);
+            richTextBox2.Clear();
+            richTextBox2.AppendText(temp2);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,6 +91,20 @@ namespace RSLogixConverter
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
             richTextBox2.SelectionFont = FNT;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBox2.Text);
+            label1.Visible = true;
+            timer1.Stop();
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+            timer1.Stop();
         }
     }
 }
