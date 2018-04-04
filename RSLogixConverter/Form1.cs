@@ -90,7 +90,10 @@ namespace RSLogixConverter
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
-            richTextBox2.SelectionFont = FNT;
+            if (FNT != null)
+            {
+                richTextBox2.SelectionFont = FNT;
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
