@@ -106,5 +106,51 @@ namespace RSLogixConverter
             label1.Visible = false;
             timer1.Stop();
         }
+
+        private void zakończToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void wklejToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Clipboard.GetText();
+        }
+
+        private void skopiujToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBox2.Text);
+            label1.Visible = true;
+            timer1.Stop();
+            timer1.Start();
+        }
+
+        private void czcionkaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String temp1, temp2;
+            FontDialog fd = new FontDialog();
+
+            temp1 = richTextBox1.Text;
+            temp2 = richTextBox2.Text;
+            richTextBox1.Clear();
+
+
+            fd.Font = richTextBox1.SelectionFont;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                FNT = fd.Font;
+                richTextBox1.SelectionFont = FNT;
+            }
+
+            richTextBox1.AppendText(temp1);
+            richTextBox2.Clear();
+            richTextBox2.AppendText(temp2);
+        }
+
+        private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
     }
 }
