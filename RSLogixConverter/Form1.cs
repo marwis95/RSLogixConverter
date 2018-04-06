@@ -155,5 +155,10 @@ namespace RSLogixConverter
         {
             panel1.Visible = true;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
     }
 }
