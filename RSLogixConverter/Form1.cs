@@ -16,6 +16,29 @@ namespace RSLogixConverter
         int numChr;
         Font FNT;
 
+        string[,] tab = new string[,] {
+        {"261", "$B9"},
+        {"263", "$E6"},
+        {"281", "$EA"},
+        {"322", "$B3"},
+        {"324", "$F1"},
+        {"243", "$F3"},
+        {"347", "$9C"},
+        {"380", "$BF"},
+        {"378", "$9F"},
+        {"260", "$A5"},
+        {"262", "$C6"},
+        {"280", "$CA"},
+        {"321", "$A3"},
+        {"323", "$D1"},
+        {"211", "$D3"},
+        {"346", "$8C"},
+        {"379", "$AF"},
+        {"377", "$8F"},
+        {"10", "$R$L"}
+        };
+
+
         public Form1()
         {
             InitializeComponent();
@@ -159,6 +182,11 @@ namespace RSLogixConverter
         private void button3_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Console.Write(tab[0, 1]);
         }
     }
 }
