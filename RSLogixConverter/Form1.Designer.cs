@@ -69,7 +69,6 @@
             // 
             this.richTextBox2.Location = new System.Drawing.Point(46, 256);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(704, 199);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
@@ -191,9 +190,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Location = new System.Drawing.Point(0, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 545);
+            this.panel1.Size = new System.Drawing.Size(794, 541);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 

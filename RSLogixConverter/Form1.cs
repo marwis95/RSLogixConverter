@@ -12,8 +12,6 @@ namespace RSLogixConverter
 {
     public partial class Form1 : Form
     {
-        char Chr;
-        int numChr;
         Font FNT;
 
         string[,] tab = new string[,] {
@@ -46,8 +44,11 @@ namespace RSLogixConverter
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
+            char Chr;
+            int numChr;
             bool finded = false;
             richTextBox2.Clear();
+
             for (int i = 0; i < (richTextBox1.Text.Length); i++)
             {
                 finded = false;
@@ -69,11 +70,6 @@ namespace RSLogixConverter
                 {
                     richTextBox2.AppendText(Chr.ToString());
                 }
-
-                //if (numChr == 10) richTextBox2.AppendText("$R$L");
-                //else richTextBox2.AppendText(Chr.ToString());
-
-
 
             }
 
@@ -109,10 +105,30 @@ namespace RSLogixConverter
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
+            char Chr;
+            int numChr;
+            bool finded = false;
+
             if (FNT != null)
             {
                 richTextBox2.SelectionFont = FNT;
             }
+
+            richTextBox1.Clear();
+
+            for (int i = 0; i < (richTextBox2.Text.Length); i++)
+            {
+
+                Chr = richTextBox2.Text[i];
+                numChr = Chr;
+
+                if (richTextBox2.Text[i] == '$')
+                {
+                    Console.Write("Zanalzlem dolara");
+                }
+
+            }
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
