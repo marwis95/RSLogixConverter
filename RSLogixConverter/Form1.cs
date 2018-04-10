@@ -44,7 +44,7 @@ namespace RSLogixConverter
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            char Chr;
+            /*char Chr;
             int numChr;
             bool finded = false;
             richTextBox2.Clear();
@@ -72,7 +72,7 @@ namespace RSLogixConverter
                 }
 
             }
-
+            */
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -106,8 +106,12 @@ namespace RSLogixConverter
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
             char Chr;
+            string catchedChr="";
             int numChr;
             bool finded = false;
+            int jump = 0;
+            string checkStr="";
+
 
             if (FNT != null)
             {
@@ -115,17 +119,46 @@ namespace RSLogixConverter
             }
 
             richTextBox1.Clear();
+            
 
             for (int i = 0; i < (richTextBox2.Text.Length); i++)
             {
+                finded = false;
 
                 Chr = richTextBox2.Text[i];
                 numChr = Chr;
 
                 if (richTextBox2.Text[i] == '$')
                 {
-                    Console.Write("Zanalzlem dolara");
+                    checkStr = richTextBox2.Text[i].ToString() + richTextBox2.Text[i + 1].ToString() + richTextBox2.Text[i + 2].ToString();
+
+                    for (int j = 0; j < 19; j++)
+                    {
+                        if (checkStr == tab[j, 1])
+                        {
+                            finded = true;
+                            catchedChr = tab[j, 0];
+                            jump = 3;
+                        }
+                    }
                 }
+
+
+                if ((finded == false) && (jump == 0))
+                {
+                    richTextBox1.AppendText(Chr.ToString());
+                }
+
+                if (jump != 0)
+                {
+                    jump--;
+                }
+
+                if(finded == true){
+                    richTextBox1.AppendText( ((char)Int32.Parse(catchedChr)).ToString() );
+                }
+
+
 
             }
 
