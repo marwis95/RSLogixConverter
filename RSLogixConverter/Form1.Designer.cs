@@ -64,6 +64,7 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.richTextBox1.Enter += new System.EventHandler(this.richTextBox1_Enter);
             // 
             // richTextBox2
             // 
@@ -73,6 +74,7 @@
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
+            this.richTextBox2.Enter += new System.EventHandler(this.richTextBox2_Enter);
             // 
             // button1
             // 
@@ -190,9 +192,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 39);
+            this.panel1.Location = new System.Drawing.Point(0, 300);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 541);
+            this.panel1.Size = new System.Drawing.Size(794, 280);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 

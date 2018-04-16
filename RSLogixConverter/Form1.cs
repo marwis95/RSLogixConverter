@@ -13,6 +13,7 @@ namespace RSLogixConverter
     public partial class Form1 : Form
     {
         Font FNT;
+        bool Rev = false;
 
         string[,] tab = new string[,] {
         {"261", "$B9"},
@@ -44,35 +45,47 @@ namespace RSLogixConverter
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            /*char Chr;
-            int numChr;
-            bool finded = false;
-            richTextBox2.Clear();
-
-            for (int i = 0; i < (richTextBox1.Text.Length); i++)
+            if (Rev == false)
             {
-                finded = false;
+                char Chr;
+                int numChr;
+                bool finded = false;
+                richTextBox2.Clear();
 
-                Chr = richTextBox1.Text[i];
-                numChr = Chr;
-
-
-                for (int j = 0; j < 19 ; j++)
+                for (int i = 0; i < (richTextBox1.Text.Length); i++)
                 {
-                    if (numChr.ToString() == tab[j, 0])
+                    finded = false;
+
+                    Chr = richTextBox1.Text[i];
+                    numChr = Chr;
+
+
+                    for (int j = 0; j < 19; j++)
                     {
-                        richTextBox2.AppendText(tab[j, 1]);
-                        finded = true;
+                        if (numChr.ToString() == tab[j, 0])
+                        {
+                            richTextBox2.AppendText(tab[j, 1]);
+                            finded = true;
+                        }
                     }
-                }
 
-                if (finded == false)
-                {
-                    richTextBox2.AppendText(Chr.ToString());
-                }
+                    if (finded == false)
+                    {
+                        richTextBox2.AppendText(Chr.ToString());
+                    }
 
+                }
             }
-            */
+            else if (Rev == true)
+            {
+                string temp = richTextBox1.Text;
+                if (FNT != null)
+                {
+                    richTextBox1.Clear();
+                    richTextBox1.SelectionFont = FNT;
+                    richTextBox1.AppendText(temp);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -105,61 +118,72 @@ namespace RSLogixConverter
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
-            char Chr;
-            string catchedChr="";
-            int numChr;
-            bool finded = false;
-            int jump = 0;
-            string checkStr="";
-
-
-            if (FNT != null)
+            if (Rev == true)
             {
-                richTextBox2.SelectionFont = FNT;
-            }
+                char Chr;
+                string catchedChr = "";
+                int numChr;
+                bool finded = false;
+                int jump = 0;
+                string checkStr = "";
 
-            richTextBox1.Clear();
-            
 
-            for (int i = 0; i < (richTextBox2.Text.Length); i++)
-            {
-                finded = false;
-
-                Chr = richTextBox2.Text[i];
-                numChr = Chr;
-
-                if (richTextBox2.Text[i] == '$')
+                if (FNT != null)
                 {
-                    checkStr = richTextBox2.Text[i].ToString() + richTextBox2.Text[i + 1].ToString() + richTextBox2.Text[i + 2].ToString();
+                    richTextBox2.SelectionFont = FNT;
+                }
 
-                    for (int j = 0; j < 19; j++)
+                richTextBox1.Clear();
+
+
+                for (int i = 0; i < (richTextBox2.Text.Length); i++)
+                {
+                    finded = false;
+
+                    Chr = richTextBox2.Text[i];
+                    numChr = Chr;
+
+                    if (richTextBox2.Text[i] == '$')
                     {
-                        if (checkStr == tab[j, 1])
+                        checkStr = richTextBox2.Text[i].ToString() + richTextBox2.Text[i + 1].ToString() + richTextBox2.Text[i + 2].ToString();
+
+                        for (int j = 0; j < 19; j++)
                         {
-                            finded = true;
-                            catchedChr = tab[j, 0];
-                            jump = 3;
+                            if (checkStr == tab[j, 1])
+                            {
+                                finded = true;
+                                catchedChr = tab[j, 0];
+                                jump = 3;
+                            }
                         }
                     }
+
+
+                    if ((finded == false) && (jump == 0))
+                    {
+                        richTextBox1.AppendText(Chr.ToString());
+                    }
+
+                    if (jump != 0)
+                    {
+                        jump--;
+                    }
+
+                    if (finded == true)
+                    {
+                        richTextBox1.AppendText(((char)Int32.Parse(catchedChr)).ToString());
+                    }
+
+
+
                 }
-
-
-                if ((finded == false) && (jump == 0))
+            }
+            else if (Rev == false)
+            {
+                if (FNT != null)
                 {
-                    richTextBox1.AppendText(Chr.ToString());
+                    richTextBox2.SelectionFont = FNT;
                 }
-
-                if (jump != 0)
-                {
-                    jump--;
-                }
-
-                if(finded == true){
-                    richTextBox1.AppendText( ((char)Int32.Parse(catchedChr)).ToString() );
-                }
-
-
-
             }
 
         }
@@ -232,6 +256,16 @@ namespace RSLogixConverter
         private void Form1_Load(object sender, EventArgs e)
         {
             Console.Write(tab[0, 1]);
+        }
+
+        private void richTextBox1_Enter(object sender, EventArgs e)
+        {
+            Rev = false;
+        }
+
+        private void richTextBox2_Enter(object sender, EventArgs e)
+        {
+            Rev = true;
         }
     }
 }
