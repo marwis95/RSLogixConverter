@@ -145,7 +145,15 @@ namespace RSLogixConverter
 
                     if (richTextBox2.Text[i] == '$')
                     {
-                        checkStr = richTextBox2.Text[i].ToString() + richTextBox2.Text[i + 1].ToString() + richTextBox2.Text[i + 2].ToString();
+                        try
+                        {
+                            checkStr = richTextBox2.Text[i].ToString() + richTextBox2.Text[i + 1].ToString() + richTextBox2.Text[i + 2].ToString();
+
+                        }
+                        catch (System.IndexOutOfRangeException a)
+                        {
+                            System.Console.WriteLine(a.Message);
+                        }
 
                         for (int j = 0; j < 19; j++)
                         {
@@ -156,6 +164,27 @@ namespace RSLogixConverter
                                 jump = 3;
                             }
                         }
+                    }
+
+
+                    if (richTextBox2.Text[i] == '$')
+                    {
+                        try
+                        {
+                            checkStr = richTextBox2.Text[i].ToString() + richTextBox2.Text[i + 1].ToString() + richTextBox2.Text[i + 2].ToString() + richTextBox2.Text[i + 3].ToString();
+
+                        }
+                        catch (System.IndexOutOfRangeException a)
+                        {
+                            System.Console.WriteLine(a.Message);
+                        }
+
+                        if(checkStr == tab[18, 1]){
+                                finded = true;
+                                catchedChr = tab[18, 0];
+                                jump = 4;
+                        }
+
                     }
 
 
