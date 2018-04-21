@@ -303,5 +303,27 @@ namespace RSLogixConverter
         {
             Rev = true;
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBox1.Text);
+            label2.Visible = true;
+            timer2.Stop();
+            timer2.Start();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label2.Visible = false;
+            timer2.Stop();
+        }
+
+        private void kopiujRSLogixToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBox1.Text);
+            label2.Visible = true;
+            timer2.Stop();
+            timer2.Start();
+        }
     }
 }
