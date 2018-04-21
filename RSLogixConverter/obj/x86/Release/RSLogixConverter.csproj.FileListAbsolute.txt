@@ -6,3 +6,4 @@ C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\RSLogixConverter\RSLogixCo
 C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Release\RSLogixConverter.exe
 C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Release\RSLogixConverter.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Release\RSLogixConverter.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\RSLogixConverter\RSLogixConverter\obj\x86\Release\RSLogixConverter.Form2.resources
