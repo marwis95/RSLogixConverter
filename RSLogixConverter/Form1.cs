@@ -95,7 +95,7 @@ namespace RSLogixConverter
 
             temp1 = richTextBox1.Text;
             temp2 = richTextBox2.Text;
-            richTextBox1.Clear();
+            //richTextBox1.Clear();
             
 
             fd.Font = richTextBox1.SelectionFont;
@@ -106,6 +106,8 @@ namespace RSLogixConverter
                 richTextBox1.SelectionFont = FNT;
             }
 
+            richTextBox1.Clear();
+            richTextBox1.SelectionFont = FNT;
             richTextBox1.AppendText(temp1);
             richTextBox2.Clear();
             richTextBox2.AppendText(temp2);
@@ -285,6 +287,8 @@ namespace RSLogixConverter
         private void Form1_Load(object sender, EventArgs e)
         {
             Console.Write(tab[0, 1]);
+            richTextBox1.Font = new Font(richTextBox1.Font.FontFamily, 18);
+            richTextBox2.Font = new Font(richTextBox2.Font.FontFamily, 18);
         }
 
         private void richTextBox1_Enter(object sender, EventArgs e)
